@@ -13,6 +13,7 @@ namespace p511_oop
             return x + y;
         }
 
+
         static void Main(string[] args)
         {
         }
