@@ -10,6 +10,7 @@ namespace p511_oop
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello, World!");
         }
     }
 }
