@@ -11,70 +11,38 @@ namespace p511_oop
     {
         static void Main(string[] args)
         {
-            Rectangle rect1 = new Rectangle(3, 4.5);
+            Rectangle rect1 = new Rectangle(8, 4.9);
+            Rectangle rect2 = new Rectangle(10, 100);
+            Rectangle rect3 = new Rectangle(5.313213, 7.8);
 
-            Console.WriteLine($"Ширина: {rect1.Width}");
-            Console.WriteLine($"Высота: {rect1.Height}");
-            Console.WriteLine($"Площадь: {rect1.Area}");
-            Console.WriteLine($"Периметр: {rect1.Perimeter}");
+            double width1 = rect1.width;
+            double height1 = rect1.height;
+
+            double width2 = rect2.width;
+            double height2 = rect2.height;
+
+            double width3 = rect3.width;
+            double height3 = rect3.height;
+
+            Console.WriteLine($"Ширина: {width1}, Высота: {height1}, Площадь: {rect1.GetArea()}, Периметр: {rect1.GetPerimeter()}");
+            Console.WriteLine($"Ширина: {width2}, Высота: {height2}, Площадь: {rect2.GetArea()}, Периметр: {rect2.GetPerimeter()}");
+            Console.WriteLine($"Ширина: {width3}, Высота: {height3}, Площадь: {rect3.GetArea()}, Периметр: {rect3.GetPerimeter()}");
         }
 
         class Rectangle
         {
-            private double _width;
-            private double _height;
-
-            public double Width
-            {
-                get
-                {
-                    return _width;
-                }
-                set
-                {
-                    if (value > 0)
-                    {
-                        _width = value;
-                    }
-                }
-            }
-
-            public double Height
-            {
-                get
-                {
-                    return _height;
-                }
-                set
-                {
-                    if (value > 0)
-                    {
-                        _height = value;
-                    }
-                }
-            }
-
-            public double Area
-            {
-                get
-                {
-                    return _width * _height;
-                }
-            }
-
-            public double Perimeter
-            {
-                get
-                {
-                    return (_width + _height) * 2;
-                }
-            }
+            public double width;
+            public double height;
 
             public Rectangle(double width, double height)
             {
-                Width = width;
-                Height = height;
+                this.width = width;
+                this.height = height;
             }
+
+            public double GetArea() { return width * height; }
+
+            public double GetPerimeter() { return (width + height) * 2; }
         }
     }
 }
