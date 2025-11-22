@@ -14,7 +14,10 @@ namespace p511_oop
             int[] arr2 = { 3, 10, 9, 3 };
             int[] arr3 = { 2, 7 };
 
-            PrintArray(ArraysSum(arr1, arr2));
+            int[] result = ArraysSum(arr1, arr2);
+
+            for (int i = 0; i < result.Length; i++)
+                Console.WriteLine($"{i + 1}: {result[i]}");
         }
 
         static int[] ArraysSum(int[] arr1, int[] arr2)
@@ -31,12 +34,6 @@ namespace p511_oop
                 result[i] = arr1[i] + arr2[i];
             }
             return result;
-        }
-
-        static void PrintArray(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++)
-                Console.WriteLine($"{i + 1}: {arr[i]}");
         }
     }
 }
