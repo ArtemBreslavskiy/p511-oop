@@ -14,7 +14,7 @@ namespace p511_oop
             int[] arr2 = { 3, 10, 9, 3 };
             int[] arr3 = { 2, 7 };
 
-            PrintArray(ArraysSum(arr1, arr3));
+            PrintArray(ArraysSum(arr1, arr2));
         }
 
         static int[] ArraysSum(int[] arr1, int[] arr2)
