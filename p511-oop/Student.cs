@@ -8,7 +8,7 @@ namespace p511_oop
 {
     class Student
     {
-        private DateTime birthday_;
+        private DateTime _birthday;
         public string FullName { get; set; }
         public string PhoneNumber { get; set; }
         public string City { get; set; }
@@ -21,7 +21,7 @@ namespace p511_oop
         {
             get
             {
-                return birthday_;
+                return _birthday;
             }
             set
             {
@@ -33,7 +33,7 @@ namespace p511_oop
                 }
                 if (age > 0 && age < 120)
                 {
-                    birthday_ = value;
+                    _birthday = value;
                 }
             }
         }
@@ -65,7 +65,7 @@ namespace p511_oop
         public void PrintValue()
         {
             Console.WriteLine($"\tFullName: {FullName}\n");
-            Console.WriteLine($"\tBirthday: {birthday_}\n");
+            Console.WriteLine($"\tBirthday: {_birthday}\n");
             Console.WriteLine($"\tPhoneNumber: {PhoneNumber}\n");
             Console.WriteLine($"\tCity: {City}\n");
             Console.WriteLine($"\tCountry: {Country}\n");
