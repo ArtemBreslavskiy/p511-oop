@@ -24,5 +24,12 @@ namespace p511_oop
             Console.WriteLine($"\ty: {Y}\n");
             Console.WriteLine($"\tz: {Z}");
         }
+
+        public void NewPosition(int x, int y, int z)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }
     }
 }
