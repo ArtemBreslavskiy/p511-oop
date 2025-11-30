@@ -23,7 +23,6 @@ namespace p511_oop
             PagesCount
         }
 
-
         public Book(string title = "Unknown", string author = "Unknown", string publisher = "Unknown", int yearOfPrinting = -1, int pagesCount = -1)
         {
             Title = title;
@@ -33,12 +32,13 @@ namespace p511_oop
             PagesCount = pagesCount;
         }
 
-        public void PrintFilteredData(bookArguments argument, string value)
+        public void PrintBook()
         {
-            if (argument == bookArguments.YearOfPrinting || argument == bookArguments.PagesCount)
-            {
-                int intValue = Convert.ToInt32(value);
-            }
+            Console.WriteLine($"Title: {Title}");
+            Console.WriteLine($"Author: {Author}");
+            Console.WriteLine($"Publisher: {Publisher}");
+            Console.WriteLine($"YearOfPrinting: {YearOfPrinting}");
+            Console.WriteLine($"PagesCount: {PagesCount}");
         }
     }
 }
