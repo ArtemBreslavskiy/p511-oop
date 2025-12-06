@@ -11,7 +11,14 @@ namespace p511_oop
     {
         static void Main(string[] args)
         {
-            
+            int[,] e =
+            {
+                {1, 2 },
+                {3, 4 },
+            };
+
+            Matrix m = new Matrix(e);
+            m.PrintMatrix();
         }
     }
 }
