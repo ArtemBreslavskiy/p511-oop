@@ -11,7 +11,18 @@ namespace p511_oop
     {
         static void Main(string[] args)
         {
-            
+            List<Pasport> pasports = new List<Pasport>();
+
+            pasports.Add(new Pasport("Bob", "Doe", 1, 1));
+            pasports.Add(new Pasport("Tom", "Doe", 2, 2));
+            pasports.Add(new Pasport("John", "Doe", 3, 3));
+            pasports.Add(new Pasport("Tim", "Doe", 4, 4));
+
+            foreach (Pasport pasport in pasports)
+            {
+                pasport.PrintData();
+                Console.WriteLine();
+            }
         }
     }
 }
