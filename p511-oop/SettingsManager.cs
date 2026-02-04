@@ -19,21 +19,6 @@ namespace p511_oop
             Console.ForegroundColor = _originalColor;
         }
 
-        public void PrintMenu()
-        {
-            Console.WriteLine("\n\t0: Print settings values");
-            Console.WriteLine("\t1: Set language");
-            Console.WriteLine("\t2: Set volume");
-            Console.WriteLine("\t3: Set brightness");
-            Console.WriteLine("\t4: Set text size");
-            Console.WriteLine("\t5: On/off dark mode");
-            Console.WriteLine("\t6: Reset to default settings");
-            Console.WriteLine("\t7: Save settings");
-            Console.WriteLine("\t8: Load settings");
-            Console.WriteLine("\n\tstop: Close the program");
-            Console.WriteLine("\thelp: Bring up a list of options");
-        }
-
         public void PrintSettingsValues(Settings settings)
         {
             Console.WriteLine($"\n\t\tLanguage: {settings.Language}");
