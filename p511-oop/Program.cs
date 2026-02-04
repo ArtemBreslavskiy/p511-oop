@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace p511_oop
 {
@@ -11,69 +12,73 @@ namespace p511_oop
     {
         static void Main(string[] args)
         {
-            Rectangle rect1 = new Rectangle(3, 4.5);
+            bool stop = false;
+            Settings settings = new Settings();
+            SettingsManager settingsManager = new SettingsManager();
 
-            Console.WriteLine($"Ширина: {rect1.Width}");
-            Console.WriteLine($"Высота: {rect1.Height}");
-            Console.WriteLine($"Площадь: {rect1.Area}");
-            Console.WriteLine($"Периметр: {rect1.Perimeter}");
-        }
+            settingsManager.PrintMenu();
 
-        class Rectangle
-        {
-            private double _width;
-            private double _height;
-
-            public double Width
+            while (!stop)
             {
-                get
-                {
-                    return _width;
-                }
-                set
-                {
-                    if (value > 0)
-                    {
-                        _width = value;
-                    }
-                }
-            }
+                Console.Write("\n\n\tSelect an option: ");
+                string input = Console.ReadLine();
 
-            public double Height
-            {
-                get
+                switch (input)
                 {
-                    return _height;
-                }
-                set
-                {
-                    if (value > 0)
-                    {
-                        _height = value;
-                    }
-                }
-            }
+                    case "0":
+                        settingsManager.PrintSettingsValues(settings);
+                        break;
 
-            public double Area
-            {
-                get
-                {
-                    return _width * _height;
-                }
-            }
+                    case "1":
+                        settingsManager.SetLanguage(settings);
+                        break;
 
-            public double Perimeter
-            {
-                get
-                {
-                    return (_width + _height) * 2;
-                }
-            }
+                    case "2":
+                        settingsManager.SetVolume(settings);
+                        break;
 
-            public Rectangle(double width, double height)
-            {
-                Width = width;
-                Height = height;
+                    case "3":
+                        settingsManager.SetBrightness(settings);
+                        break;
+
+                    case "4":
+                        settingsManager.SetTextSize(settings);
+                        break;
+
+                    case "5":
+                        settingsManager.SwitchDarkMode(settings);
+                        break;
+
+                    case "6":
+                        settings = settingsManager.ResetToDefault();
+                        break;
+
+                    case "7":
+                        settingsManager.Save(settings);
+                        break;
+
+                    case "8":
+                        settings = settingsManager.Load();
+                        break;
+
+                    case "stop":
+                        stop = true;
+                        Console.Clear();
+                        break;
+
+                    case "help":
+                        settingsManager.PrintMenu();
+                        break;
+
+                    default:
+                        ConsoleColor originalColor = Console.ForegroundColor;
+                        Console.ForegroundColor = ConsoleColor.Red;
+
+                        Console.WriteLine("\n\tError: Incorrect input");
+
+                        Console.ForegroundColor = originalColor;
+                        break;
+                }
             }
         }
     }
